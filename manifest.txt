@@ -1,0 +1,2 @@
+% snedecorarticle.dtx     --  Class for articles
+% snedecorbeamer.dtx      --  Class for presentations
