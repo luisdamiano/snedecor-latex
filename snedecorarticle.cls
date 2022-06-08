@@ -80,6 +80,9 @@
 % \renewcommand{\headrulewidth}{0pt}
 % \renewcommand{\footrulewidth}{0pt}
 
+% Title page -------------------------------------------------------------------
+\RequirePackage{authblk}
+
 % Tables -----------------------------------------------------------------------
 \RequirePackage{booktabs}
 
