@@ -116,8 +116,13 @@
 
 %% Punctuation
 \def\funcolon{\mathpunct{:}}
+\def\colonfun{\mathpunct{:}}
 
 %% Operators
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\diag}{\text{diag}}
+
 \DeclareMathOperator{\evsym}{E}
 \newcommand\EV[1]{\evsym\left\langle#1\right\rangle}
 \DeclareMathOperator{\vsym}{V}
