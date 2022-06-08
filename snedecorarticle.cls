@@ -228,6 +228,7 @@
 \def\alerthl#1{\sethlcolor{red}\hl{#1}}
 
 % References -------------------------------------------------------------------
+\RequirePackage{xr}
 \RequirePackage{hyperref}
 \hypersetup{
   colorlinks,
