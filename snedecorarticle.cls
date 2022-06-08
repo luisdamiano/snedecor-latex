@@ -177,6 +177,15 @@
 }{}{}
 \makeatother
 
+% Pseudocode -------------------------------------------------------------------
+\RequirePackage{algorithm}
+
+\RequirePackage{algorithmic}
+\algsetup{indent=2em} %% Indentation length
+\algsetup{linenosize=\small} %% Line number size
+\algsetup{linenodelimiter=} %% No delimiter after line number
+\setboolean{ALC@noend}{true} %% no end statements
+
 % Editing ----------------------------------------------------------------------
 \RequirePackage{todonotes}
 \setuptodonotes{
