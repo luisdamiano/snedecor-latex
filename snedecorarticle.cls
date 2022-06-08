@@ -105,7 +105,6 @@
 %% Bold math
 \RequirePackage{bm}
 %% https://tex.stackexchange.com/a/222749/225233
-%%\newcommand*{\B}[1]{\ifmmode\bm{#1}\else\textbf{#1}\fi}
 \def\BB#1{\mathbb{#1}}
 \def\Bx#1{\bm{#1}}
 \def\dx#1{\,\mathrm{d}#1}
