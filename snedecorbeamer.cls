@@ -31,7 +31,60 @@
 \ProvidesClass{snedecorbeamer}[2022-05-06 The Snedecor bundle class for nice presentations]
 
 % Base class -------------------------------------------------------------------
+%% Change aspect ratio to 16:9
+% \setlength\beamer@paperwidth{16.00cm}%
+% \setlength\beamer@paperheight{9.00cm}%
+\PassOptionsToClass{aspectratio=169}{beamer}
+%% Vertical flushing
+\PassOptionsToClass{t}{beamer}
+
 %% Pass unhandled options to the base class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{beamer}}
 \ProcessOptions\relax
 \LoadClass{beamer}
+
+% Load Snedecor commons --------------------------------------------------------
+\RequirePackage{snedecorcommons}
+
+% Layout -----------------------------------------------------------------------
+%% Margins
+\setbeamersize{
+  text margin left=1ex,
+  text margin right=1ex
+}
+
+%% Navigation bar
+\beamertemplatenavigationsymbolsempty{}
+
+%% Footer
+\setbeamertemplate{footline}{%
+    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{gray}
+          \tiny\insertframenumber / \insertmainframenumber}}}\hspace*{5pt}}
+
+% \defbeamertemplate{frame}{maximalwidth}{%
+%   \setbeamersize{
+%     text margin left=1ex,
+%     text margin right=1ex
+%   }
+% }
+% \define@key{beamerframe}{maximalwidth}[true]{%
+%   \setbeamertemplate{frame}[maximalwidth]%
+% }
+
+%% Captions
+\RequirePackage{caption}
+\captionsetup{labelfont={scriptsize,bf},font=scriptsize}
+
+% Overlays ---------------------------------------------------------------------
+%% Fix \pause in align environment
+%% https://tex.stackexchange.com/a/75550/225233
+\let\save@measuring@true\measuring@true
+\def\measuring@true{%
+  \save@measuring@true
+  \def\beamer@sortzero##1{\beamer@ifnextcharospec{\beamer@sortzeroread{##1}}{}}%
+  \def\beamer@sortzeroread##1<##2>{}%
+  \def\beamer@finalnospec{}%
+}
+
+% Lists ------------------------------------------------------------------------
+\setbeamertemplate{itemize subitem}{{\textendash}}

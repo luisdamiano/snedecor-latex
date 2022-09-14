@@ -28,13 +28,16 @@
 %%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{snedecorarticle}[2022-05-06 The Snedecor bundle class for nice articles]
+\ProvidesClass{snedecorarticle}[2022/05/06 The Snedecor bundle class for nice articles]
 
 % Base class -------------------------------------------------------------------
 %% Pass unhandled options to the base class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 \LoadClass{article}
+
+% Load Snedecor commons --------------------------------------------------------
+\RequirePackage{snedecorcommons}
 
 % Font -------------------------------------------------------------------------
 % %% Font family
@@ -49,6 +52,9 @@
 \doublespacing{}
 
 % Layout -----------------------------------------------------------------------
+%% Landscape pages
+\RequirePackage{pdflscape}
+
 %% Labels
 \RequirePackage[notref, notcite]{showkeys}
 \renewcommand\showkeyslabelformat[1]{\fbox{\normalfont\tiny\ttfamily#1}}
@@ -95,43 +101,6 @@
 
 % Colors -----------------------------------------------------------------------
 \RequirePackage{xcolor}
-
-% Math -------------------------------------------------------------------------
-\RequirePackage{amssymb}
-\RequirePackage{amsmath}
-\RequirePackage{amsthm}
-\RequirePackage{mathtools} % provides: coloneqq
-
-%% Double stroke
-\RequirePackage{dsfont} % provides: mathds
-
-%% Bold math
-\RequirePackage{bm}
-%% https://tex.stackexchange.com/a/222749/225233
-\def\BB#1{\mathbb{#1}}
-\def\Bx#1{\bm{#1}}
-\def\dx#1{\,\mathrm{d}#1}
-
-%% Numbers
-\def\Reals{\mathbb{R}}
-% \def\RealsP{\Reals^+}
-\def\Ints{\mathbb{N}}
-
-%% Punctuation
-\def\funcolon{\mathpunct{:}}
-\def\colonfun{\mathpunct{:}}
-
-%% Operators
-\DeclareMathOperator{\argmin}{arg\,min}
-\DeclareMathOperator{\argmax}{arg\,max}
-\DeclareMathOperator{\diag}{\text{diag}}
-
-\DeclareMathOperator{\evsym}{E}
-\newcommand\EV[1]{\evsym\left\langle#1\right\rangle}
-\DeclareMathOperator{\vsym}{V}
-\newcommand\VV[1]{\vsym\left\langle#1\right\rangle}
-\DeclareMathOperator{\covsym}{Cov}
-\newcommand\COV[1]{\covsym\left\langle#1\right\rangle}
 
 % Number lines inside equations ------------------------------------------------
 %% https://tex.stackexchange.com/a/461192/225233
@@ -230,6 +199,14 @@
 \def\warnhl#1{\sethlcolor{yellow}\hl{#1}}
 \def\alerthl#1{\sethlcolor{red}\hl{#1}}
 
+% Debug
+% ------------------------------------------------------------------------
+\overfullrule=1in
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\usepackage{lipsum}\usepackage[base]{babel} % need to go together
+% \usepackage{lua-visual-debug}
+
 % References -------------------------------------------------------------------
 \RequirePackage{xr}
 \RequirePackage{hyperref}
@@ -241,11 +218,4 @@
 }
 
 \RequirePackage{cleveref}
-
-% Debug
-% ------------------------------------------------------------------------
-\overfullrule=1in
-\RequirePackage[l2tabu, orthodox]{nag}
-
-\usepackage{lipsum}\usepackage[base]{babel} % need to go together
-%\usepackage{lua-visual-debug}
+\crefname{proof}{proof}{proofs}
