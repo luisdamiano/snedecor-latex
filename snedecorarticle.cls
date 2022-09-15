@@ -104,7 +104,7 @@
 
 % Number lines inside equations ------------------------------------------------
 %% https://tex.stackexchange.com/a/461192/225233
-\usepackage{etoolbox}
+\RequirePackage{etoolbox}
 %% Patch 'normal' math environments:
 \newcommand*\linenomathpatch[1]{%
   \cspreto{#1}{\linenomath}%
