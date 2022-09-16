@@ -64,7 +64,7 @@
 \geometry{left=1in,right=1in,bottom=1in,top=1in}
 
 %% Line number
-%\usepackage[switch]{lineno}
+%\RequirePackage[switch]{lineno}
 \RequirePackage[mathlines]{lineno}
 \setrunninglinenumbers{}
 \leftlinenumbers{}
@@ -204,8 +204,9 @@
 \overfullrule=1in
 \RequirePackage[l2tabu, orthodox]{nag}
 
-\usepackage{lipsum}\usepackage[base]{babel} % need to go together
-% \usepackage{lua-visual-debug}
+\RequirePackage{lipsum}\RequirePackage[base]{babel} % need to go together
+% \RequirePackage{lua-visual-debug}
+\RequirePackage{layout}
 
 % References -------------------------------------------------------------------
 \RequirePackage{xr}
