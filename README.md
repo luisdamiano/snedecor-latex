@@ -13,10 +13,16 @@ Maintained by Luis Damiano
 
 ## How to use
 
-Place the class files `snedecorarticle.cls` and `snedecorbeamer.cls` in your
-project, then set `snedecorarticle` or `snedecorbeamer` in your documentclass
-call
+Place all the class and style files in the corresponding place, then set
+`snedecorarticle` or `snedecorbeamer` in your documentclass call.
 
 ```
 \documentclass{snedecorarticle}
 ```
+
+**Make available for a specific project only**
+Place the class files in your project folder.
+
+**Make available globally**
+Place the class files in `~/texmf/tex/latex` and run `texhash ~/texmf/` to
+update the database.
