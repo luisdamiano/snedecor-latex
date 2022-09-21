@@ -81,6 +81,10 @@
 % Title page -------------------------------------------------------------------
 \RequirePackage{authblk}
 
+% Paragraphs -------------------------------------------------------------------
+\RequirePackage{widows-and-orphans}
+\WaOsetup{check=warning,prevent-all}
+
 % Tables -----------------------------------------------------------------------
 \RequirePackage{booktabs}
 
