@@ -40,13 +40,6 @@
 \RequirePackage{snedecorcommons}
 
 % Font -------------------------------------------------------------------------
-% %% Font family
-% \RequirePackage{libertinus}
-% \RequirePackage[T1]{fontenc}
-
-% %% Font size
-% \renewcommand{\normalsize}{\fontsize{10pt}{12pt}\selectfont}
-
 % Line spacing
 \RequirePackage{setspace}
 \doublespacing{}
@@ -64,7 +57,6 @@
 \geometry{left=1in,right=1in,bottom=1in,top=1in}
 
 %% Line number
-%\RequirePackage[switch]{lineno}
 \RequirePackage[mathlines]{lineno}
 \setrunninglinenumbers{}
 \leftlinenumbers{}
