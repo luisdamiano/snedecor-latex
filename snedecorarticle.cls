@@ -90,6 +90,7 @@
 % Captions ---------------------------------------------------------------------
 \RequirePackage{caption}
 \captionsetup{labelfont=bf}
+\captionsetup{width=.95\textwidth}
 
 % Colors -----------------------------------------------------------------------
 \RequirePackage{xcolor}
