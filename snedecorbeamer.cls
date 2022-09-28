@@ -82,6 +82,25 @@
 %% Page number
 \RequirePackage{appendixnumberbeamer}
 
+% Standout frames --------------------------------------------------------------
+\RequirePackage{tikz}
+\newcommand\standout[1]{
+  {
+    % \setbeamercolor{background canvas}{bg=palette primary}
+    % \setbeamercolor{normal text}{fg=palette secondary}
+    \begin{frame}
+      \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=center] at (current page.center) {
+          \begin{beamercolorbox}[center]{title}
+            \Huge
+%           \color{palette secondary}
+            #1
+          \end{beamercolorbox}};
+      \end{tikzpicture}
+    \end{frame}
+  }
+}
+
 % Overlays ---------------------------------------------------------------------
 %% Fix \pause in align environment
 %% https://tex.stackexchange.com/a/75550/225233
