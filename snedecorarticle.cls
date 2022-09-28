@@ -85,9 +85,6 @@
 \RequirePackage{widows-and-orphans}
 \WaOsetup{check=warning,prevent-all}
 
-% Tables -----------------------------------------------------------------------
-\RequirePackage{booktabs}
-
 % Figures ----------------------------------------------------------------------
 \RequirePackage{graphicx}
 
