@@ -79,6 +79,9 @@
 \RequirePackage{caption}
 \captionsetup{labelfont={scriptsize,bf},font=scriptsize}
 
+%% Page number
+\RequirePackage{appendixnumberbeamer}
+
 % Overlays ---------------------------------------------------------------------
 %% Fix \pause in align environment
 %% https://tex.stackexchange.com/a/75550/225233
