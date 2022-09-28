@@ -49,8 +49,8 @@
 % Layout -----------------------------------------------------------------------
 %% Margins
 \setbeamersize{
-  text margin left=1ex,
-  text margin right=1ex
+  text margin left=0.3cm,  %% Match https://github.com/josephwright/beamer/blob/c7c6724634d8aa260864ad4efa525b34ea94354e/base/themes/outer/beamerouterthemedefault.sty#L167
+  text margin right=0.3cm
 }
 
 %% Navigation bar
@@ -58,8 +58,12 @@
 
 %% Footer
 \setbeamertemplate{footline}{%
-    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{gray}
-          \tiny\insertframenumber / \insertmainframenumber}}}\hspace*{5pt}}
+  \begin{beamercolorbox}[wd=\textwidth, sep=.3cm, right]{footline}%
+    \usebeamerfont{page number in head/foot}%
+    \color{gray}\tiny%
+    \insertframenumber{}/\inserttotalframenumber{}
+  \end{beamercolorbox}
+}
 
 % \defbeamertemplate{frame}{maximalwidth}{%
 %   \setbeamersize{
